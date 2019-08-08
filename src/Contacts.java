@@ -4,7 +4,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -14,11 +13,10 @@ public class Contacts {
     private String lastName;
     private String phoneNumber;
 
-    File file = new File("/Users/Alexandra/IdeaProjects/Contacts-Manager/data/contacts.txt");
+    static File file = new File("/Users/Alexandra/IdeaProjects/Contacts-Manager/data/contacts.txt");
     Scanner scanner = new Scanner(file);
-    Path contactsPath = Paths.get("data", "contacts.txt");
-    List<String> list = Files.readAllLines(contactsPath);
-
+    static Path contactsPath = Paths.get("data", "contacts.txt");
+    static Scanner scan= new Scanner(System.in);
 
 
 //    constructor
@@ -29,36 +27,30 @@ public class Contacts {
         this.phoneNumber=phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber){
-        this.phoneNumber= phoneNumber;
-    }
-
-    public void setName(String firstName, String lastName){
-        this.firstName=firstName;
-        this.lastName= lastName;
-    }
-
-    public String getPhoneNumber(){
-        return this.phoneNumber;
-    }
-
-    public String getName(){
-        return this.firstName + this.lastName;
-    }
-
-
 
     //-- TO ADD A CONTACT;
 
-    public void addContact(String firstName, String lastName, String phoneNumber) throws IOException {
-        String concat=this.firstName+" "+this.lastName+" "+this.phoneNumber;
+    public static void addContact() throws IOException {
+        System.out.println("add a contact: ");
+        System.out.println("First name:");
+        String inputFirst = scan.nextLine();
+        System.out.println("Last name:");
+        String inputLast = scan.nextLine();
+        System.out.println("Phone number");
+        String inputNum = scan.nextLine();
+
+        String concat=inputFirst+" "+inputLast+" "+inputNum;
         Files.write(contactsPath, Arrays.asList(concat),
                 StandardOpenOption.APPEND
         );
     }
 
 //    Search for Contact
-    public void searchContact(String input) {
+    public static void searchContact() throws IOException {
+        List<String> list= Files.readAllLines(contactsPath);
+
+        System.out.println("Which contact would you like to Search for?");
+        String input= scan.nextLine();
 //
         for (int i = 0; i < list.size() - 1; i++) {
             if (list.get(i).toLowerCase().contains(input)) {
@@ -69,9 +61,10 @@ public class Contacts {
     }
 
 
-    public void removeContact(String input) throws IOException {
+    public  static void removeContact() throws IOException {
         List<String> removeList= Files.readAllLines(contactsPath);
-
+        System.out.println("Which Contact would you like to Delete?");
+            String input= scan.nextLine();
         for (int i = 0; i < removeList.size() - 1; i++) {
             if (removeList.get(i).toLowerCase().contains(input)) {
                 String item=removeList.get(i);
