@@ -21,14 +21,26 @@ public class ContactsTest {
 
 
 
+
     public static void main(String[] args) throws IOException {
 
 //        variables
-        File file = new File("/Users/Alexandra/IdeaProjects/Contacts-Manager/data/contacts.txt");
+        File file = new File("/Users/brandi/IdeaProjects/Contacts-Manager/data/contacts.txt");
         Scanner scanner = new Scanner(file);
+        Scanner scan = new Scanner(System.in);
         Path contactsPath = Paths.get("data", "contacts.txt");
 
+
+        //        Prints out List
+        ArrayList<String> list = new ArrayList<String>();
+        while (scanner.hasNextLine()) {
+            list.add(scanner.nextLine());
+            System.out.println();
+        }
         System.out.println(list);
+
+
+//        System.out.println(list);
 
 //        Contacts Alexandra=new Contacts("Alexandra","210-345-5555");
 //        Contacts Brandi=new Contacts("Brandi","210-345-6789");
@@ -38,20 +50,26 @@ public class ContactsTest {
 //        contact.getName();
 //        }
 
-        System.out.println("add a contact: First Name, Last Name, Phone Number.");
-        String input = scanner.nextLine();
-        Contact contact = new Contact(input);
-//        contact.addContact(input);
+        System.out.println("add a contact: ");
+        System.out.println("First name:");
+        String inputFirst = scan.nextLine();
+        System.out.println("Last name:");
+        String inputLast = scan.nextLine();
+        System.out.println("Phone number");
+        String inputNum = scan.nextLine();
+        Contacts contact = new Contacts(inputFirst, inputLast, inputNum);
+        contact.addContact(inputFirst, inputLast, inputNum);
 
-        System.out.println(list);
-
-
-////        Prints out List
+        //--displays updated list;
 //        ArrayList<String> list = new ArrayList<String>();
-//        while (scanner.hasNextLine()) {
-//            list.add(scanner.nextLine());
-//        }
-//        System.out.println(list);
+        list = new ArrayList<String>();
+        while (scanner.hasNextLine()) {
+            list.add(scanner.nextLine());
+            System.out.println();
+        }
+        System.out.println();
+
+
 //
 //
 ////        Contact Search
@@ -65,10 +83,11 @@ public class ContactsTest {
 //            list.remove(list.indexOf("userInput"));
 //            System.out.println(list);
 //            Files.write(contactsPath, list);
-
+//
 
 
 
 
     }
+
 }
