@@ -29,7 +29,7 @@ public class ContactsTest extends Contacts{
     public static void main(String[] args) throws IOException {
 
 //        variables
-        File file = new File("/Users/Alexandra/IdeaProjects/Contacts-Manager/data/contacts.txt");
+        File file = new File("/Users/brandi/IdeaProjects/Contacts-Manager/data/contacts.txt");
         Scanner scanner = new Scanner(file);
         Scanner scan = new Scanner(System.in);
         Path contactsPath = Paths.get("data", "contacts.txt");
@@ -46,6 +46,7 @@ public class ContactsTest extends Contacts{
             for (int i = 0; i < list.size(); i += 1) {
                 System.out.println((i + 1) + " : " + list.get(i));
             }
+        System.out.println();
 
 
 
@@ -60,20 +61,19 @@ public class ContactsTest extends Contacts{
 //        contact.getName();
 //        }
 
-        System.out.println("add a contact: ");
-        System.out.println("First name:");
-        String inputFirst = scan.nextLine();
-        System.out.println("Last name:");
-        String inputLast = scan.nextLine();
-        System.out.println("Phone number");
-        String inputNum = scan.nextLine();
-        Contacts contact = new Contacts(inputFirst, inputLast, inputNum);
-        contact.addContact(inputFirst, inputLast, inputNum);
+        //CODE BELOW WORKS
 
-        list = Files.readAllLines(contactsPath);
-        for (int i = 0; i < list.size(); i += 1) {
-            System.out.println((i + 1) + " : " + list.get(i));
-        }
+//        System.out.println("add a contact: ");
+//        System.out.println("First name:");
+//        String inputFirst = scan.nextLine();
+//        System.out.println("Last name:");
+//        String inputLast = scan.nextLine();
+//        System.out.println("Phone number");
+//        String inputNum = scan.nextLine();
+//        Contacts contact = new Contacts(inputFirst, inputLast, inputNum);
+//        contact.addContact(inputFirst, inputLast, inputNum);
+
+
 
                                                                           //--displays updated list;
 //        ArrayList<String> list = new ArrayList<String>();
@@ -100,8 +100,8 @@ public class ContactsTest extends Contacts{
 //        String findContact = contact.searchContact("alexandra");
 
 //        System.out.println(findContact);
-        contact.searchContact("sifuentes");
-     contact.searchContact("contreras");
+//        contact.searchContact("sifuentes");
+//     contact.searchContact("contreras");
 
        
 
@@ -112,6 +112,45 @@ public class ContactsTest extends Contacts{
 //            System.out.println(list);
 //            Files.write(contactsPath, list);
 ////
+
+
+        //--FOR THE SWITCH CASE:
+
+
+
+        String menu ="1. View contacts.\n" +
+                            "2. Add a new contact.\n" +
+                            "3. Search a contact by name.\n" +
+                            "4. Delete an existing contact.\n" +
+                            "5. Exit.\n" +
+                            "        Enter an option (1, 2, 3, 4 or 5):\n";
+
+        System.out.println(menu);
+
+        int input = scan.nextInt();
+
+        //NEED TO WRAP IN A DO WHILE;
+        switch(input){
+            case 1:
+//                System.out.println("Would you like to view all of the contacts?");
+                list = Files.readAllLines(contactsPath);
+                for (int i = 0; i < list.size(); i += 1) {
+                    System.out.println((i + 1) + " : " + list.get(i));
+                }
+
+
+//            case 2:
+//                break;
+//            case 3:
+//                break;
+//            case 4:
+//                break;
+            case 5:
+                System.out.println("Goodbye");
+            default:
+                break;
+
+        }
 
 
 
