@@ -29,7 +29,7 @@ public class ContactsTest extends Contacts{
     public static void main(String[] args) throws IOException {
 
 //        variables
-        File file = new File("/Users/brandi/IdeaProjects/Contacts-Manager/data/contacts.txt");
+        File file = new File("/Users/Alexandra/IdeaProjects/Contacts-Manager/data/contacts.txt");
         Scanner scanner = new Scanner(file);
         Scanner scan = new Scanner(System.in);
         Path contactsPath = Paths.get("data", "contacts.txt");
@@ -63,19 +63,10 @@ public class ContactsTest extends Contacts{
 
         //CODE BELOW WORKS
 
-//        System.out.println("add a contact: ");
-//        System.out.println("First name:");
-//        String inputFirst = scan.nextLine();
-//        System.out.println("Last name:");
-//        String inputLast = scan.nextLine();
-//        System.out.println("Phone number");
-//        String inputNum = scan.nextLine();
-//        Contacts contact = new Contacts(inputFirst, inputLast, inputNum);
-//        contact.addContact(inputFirst, inputLast, inputNum);
 
 
 
-                                                                          //--displays updated list;
+ //--displays updated list;
 //        ArrayList<String> list = new ArrayList<String>();
 //        list = new ArrayList<String>();
 //        while (scanner.hasNextLine()) {
@@ -88,7 +79,6 @@ public class ContactsTest extends Contacts{
 //        for (String line : list) {
 //            System.out.println(line);
 //        }
-
 
 
 
@@ -117,43 +107,58 @@ public class ContactsTest extends Contacts{
         //--FOR THE SWITCH CASE:
 
 
-
-        String menu ="1. View contacts.\n" +
-                            "2. Add a new contact.\n" +
-                            "3. Search a contact by name.\n" +
-                            "4. Delete an existing contact.\n" +
-                            "5. Exit.\n" +
-                            "        Enter an option (1, 2, 3, 4 or 5):\n";
-
-        System.out.println(menu);
-
-        int input = scan.nextInt();
+//
+//        String menu ="1. View contacts.\n" +
+//                            "2. Add a new contact.\n" +
+//                            "3. Search a contact by name.\n" +
+//                            "4. Delete an existing contact.\n" +
+//                            "5. Exit.\n" +
+//                            "        Enter an option (1, 2, 3, 4 or 5):\n";
+//
+//        System.out.println(menu);
+//
+//        int input = scan.nextInt();
 
         //NEED TO WRAP IN A DO WHILE;
-        switch(input){
-            case 1:
-//                System.out.println("Would you like to view all of the contacts?");
-                list = Files.readAllLines(contactsPath);
-                for (int i = 0; i < list.size(); i += 1) {
-                    System.out.println((i + 1) + " : " + list.get(i));
-                }
-
-
+//        switch(input){
+//            case 1:
+////                System.out.println("Would you like to view all of the contacts?");
+//                list = Files.readAllLines(contactsPath);
+//                for (int i = 0; i < list.size(); i += 1) {
+//                    System.out.println((i + 1) + " : " + list.get(i));
+//                }
+//
+//
 //            case 2:
+//                   System.out.println("add a contact: ");
+//                   System.out.println("First name:");
+//                   String inputFirst = scan.nextLine();
+//                   System.out.println("Last name:");
+//                   String inputLast = scan.nextLine();
+//                   System.out.println("Phone number");
+//                   String inputNum = scan.nextLine();
+//                   Contacts contact = new Contacts(inputFirst, inputLast, inputNum);
+//                   contact.addContact(inputFirst, inputLast, inputNum);
 //                break;
-//            case 3:
+////            case 3:
+////                break;
+////            case 4:
+////                break;
+//            case 5:
+//                System.out.println("Goodbye");
+//            default:
 //                break;
-//            case 4:
-//                break;
-            case 5:
-                System.out.println("Goodbye");
-            default:
-                break;
+//
+//        }
 
+        Contacts contact = new Contacts("sarah", "sue", "33333333");
+        contact.removeContact("brandi");
+
+        list = Files.readAllLines(contactsPath);
+        for (int i = 0; i < list.size(); i += 1) {
+            System.out.println((i + 1) + " : " + list.get(i));
         }
-
-
-
+        System.out.println();
 
     }
 

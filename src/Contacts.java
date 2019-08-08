@@ -21,7 +21,6 @@ public class Contacts {
 
 
 
-
 //    constructor
 
     public Contacts(String firstName, String lastName, String phoneNumber) throws IOException {
@@ -68,27 +67,20 @@ public class Contacts {
             }
         }
     }
-//Remove Contact
-//
-        public void removeContact(String input) throws IOException {
+
+
+    public void removeContact(String input) throws IOException {
         List<String> removeList= Files.readAllLines(contactsPath);
-       for(String line : removeList){
-           if (!line.contains(input)){
-               list.add(line);
-           }
-       }
-          Files.write(Paths.get(String.valueOf(file)),list);
-//
 
+        for (int i = 0; i < removeList.size() - 1; i++) {
+            if (removeList.get(i).toLowerCase().contains(input)) {
+                String item=removeList.get(i);
+                System.out.println("this is line 89:" + item);
+                removeList.remove(i);
+            }
+            }
+        Files.write(contactsPath, removeList);
 
-
-
-
-
-
-//            list=removeList;
-//            Files.write(contactsPath,list);
-        }
-
+    }
 }
 
