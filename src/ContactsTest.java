@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 
-public class ContactsTest extends Contacts{
+public class ContactsTest extends Contact{
     public ContactsTest(String firstName, String lastName, String phoneNumber) throws IOException {
         super(firstName, lastName, phoneNumber);
     }
@@ -22,7 +22,7 @@ public class ContactsTest extends Contacts{
     public static void main(String[] args) throws IOException {
 
 //        VARIABLES
-        File file = new File("/Users/Alexandra/IdeaProjects/Contacts-Manager/data/contacts.txt");
+        File file = new File("/Users/brandi/IdeaProjects/Contacts-Manager/data/contacts.txt");
         Scanner scanner = new Scanner(file);
         Scanner scan = new Scanner(System.in);
         Path contactsPath = Paths.get("data", "contacts.txt");

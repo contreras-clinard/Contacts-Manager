@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class Contacts {
+public class Contact{
     private String firstName;
     private String lastName;
     private String phoneNumber;
@@ -21,11 +21,10 @@ public class Contacts {
 
 //    constructor
 
-    public Contacts(String firstName, String lastName, String phoneNumber) throws IOException {
+    public Contact(String firstName, String lastName, String phoneNumber) throws IOException {
         this.firstName=firstName;
         this.lastName = lastName;
         this.phoneNumber=phoneNumber;
-//        Scanner scanner = new Scanner(file);
     }
 
 
@@ -40,8 +39,8 @@ public class Contacts {
         System.out.println("Phone number");
         String inputNum = scan.nextLine();
 
-        String contactInfo= inputFirst+" | "+inputLast+" | "+inputNum;
-
+        String contactInfo= String.format("%-15s %-15s | %s15", inputFirst, inputLast, inputNum );
+        System.out.println("You have added " + contactInfo);
         Files.write(contactsPath, Arrays.asList(contactInfo),
                 StandardOpenOption.APPEND
         );
@@ -50,7 +49,7 @@ public class Contacts {
 //    SEARCH CONTACT
     public static void searchContact() throws IOException {
         List<String> list= Files.readAllLines(contactsPath);
-        System.out.println(list);
+//        System.out.println(list);
         System.out.println("Which contact would you like to Search for?");
         String input= scan.nextLine();
 //
@@ -72,6 +71,7 @@ public class Contacts {
                 String item=removeList.get(i);
 //                System.out.println("this is line 89:" + item);
                 removeList.remove(i);
+                System.out.println("You have deleted " + item);
             }
             }
         Files.write(contactsPath, removeList);
