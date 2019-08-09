@@ -42,8 +42,9 @@ public class ContactsTest extends Contact{
         menu +="\n1. View contacts.\n";
         menu+="2. Add a new contact.\n";
         menu+="3. Search a contact by name.\n";
-        menu+="4. Delete an existing contact.\n";
-        menu+="5. Exit.\n" ;
+        menu+="4. Edit a contact.\n";
+        menu+="5. Delete an existing contact.\n";
+        menu+="6. Exit.\n" ;
         menu+="Enter an option:\n";
 
     do {
@@ -76,6 +77,8 @@ public class ContactsTest extends Contact{
 
         }
     }while(input !=5);
+
+//        editContact();
 
     }
 
