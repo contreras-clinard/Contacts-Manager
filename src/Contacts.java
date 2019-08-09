@@ -14,7 +14,7 @@ public class Contacts {
     private String phoneNumber;
 
     static File file = new File("/Users/Alexandra/IdeaProjects/Contacts-Manager/data/contacts.txt");
-    Scanner scanner = new Scanner(file);
+    static Scanner scanner;
     static Path contactsPath = Paths.get("data", "contacts.txt");
     static Scanner scan= new Scanner(System.in);
 
@@ -25,6 +25,7 @@ public class Contacts {
         this.firstName=firstName;
         this.lastName = lastName;
         this.phoneNumber=phoneNumber;
+//        Scanner scanner = new Scanner(file);
     }
 
 
@@ -45,30 +46,30 @@ public class Contacts {
         );
     }
 
-//    Search for Contact
+//    SEARCH CONTACT
     public static void searchContact() throws IOException {
         List<String> list= Files.readAllLines(contactsPath);
-
+        System.out.println(list);
         System.out.println("Which contact would you like to Search for?");
         String input= scan.nextLine();
 //
-        for (int i = 0; i < list.size() - 1; i++) {
+        for (int i = 0; i <= list.size()-1 ; i++) {
             if (list.get(i).toLowerCase().contains(input)) {
-                System.out.println(list.get(i));
+                System.out.println("Contact info:/n"+list.get(i));
 //
             }
         }
     }
 
-
+//    REMOVE CONTACT
     public  static void removeContact() throws IOException {
         List<String> removeList= Files.readAllLines(contactsPath);
         System.out.println("Which Contact would you like to Delete?");
             String input= scan.nextLine();
-        for (int i = 0; i < removeList.size() - 1; i++) {
+        for (int i = 0; i <= removeList.size()-1 ; i++) {
             if (removeList.get(i).toLowerCase().contains(input)) {
                 String item=removeList.get(i);
-                System.out.println("this is line 89:" + item);
+//                System.out.println("this is line 89:" + item);
                 removeList.remove(i);
             }
             }

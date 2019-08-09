@@ -19,20 +19,14 @@ public class ContactsTest extends Contacts{
 
     public static void main(String[] args) throws IOException {
 
-//        variables
+//        VARIABLES
         File file = new File("/Users/Alexandra/IdeaProjects/Contacts-Manager/data/contacts.txt");
         Scanner scanner = new Scanner(file);
         Scanner scan = new Scanner(System.in);
         Path contactsPath = Paths.get("data", "contacts.txt");
+        int input;
 
-
-        //        Prints out List
-////        ArrayList<String> list = new ArrayList<String>();
-//        while (scanner.hasNextLine()) {
-//            list.add(scanner.nextLine());
-//            System.out.println();
-//        }
-//        System.out.println(list);
+//        PRINTS LIST
             List<String> list = Files.readAllLines(contactsPath);
             for (int i = 0; i < list.size(); i += 1) {
                 System.out.println((i + 1) + " : " + list.get(i));
@@ -40,22 +34,22 @@ public class ContactsTest extends Contacts{
         System.out.println();
 
         //--FOR THE SWITCH CASE:
-
-
 //
-        String menu ="1. View contacts.\n" +
-                            "2. Add a new contact.\n" +
-                            "3. Search a contact by name.\n" +
-                            "4. Delete an existing contact.\n" +
-                            "5. Exit.\n" +
-                            "        Enter an option:\n";
+        String  menu="\n\nMENU";
+        menu +="\n1. View contacts.\n";
+        menu+="2. Add a new contact.\n";
+        menu+="3. Search a contact by name.\n";
+        menu+="4. Delete an existing contact.\n";
+        menu+="5. Exit.\n" ;
+        menu+="Enter an option:\n";
 
+    do {
         System.out.println(menu);
 
-        int input = scan.nextInt();
+         input = scan.nextInt();
 
         //NEED TO WRAP IN A DO WHILE;
-        switch(input){
+        switch (input) {
             case 1:
                 list = Files.readAllLines(contactsPath);
                 for (int i = 0; i < list.size(); i += 1) {
@@ -77,14 +71,7 @@ public class ContactsTest extends Contacts{
                 break;
 
         }
-
-
-//        Prints the lines
-//        list = Files.readAllLines(contactsPath);
-//        for (int i = 0; i < list.size(); i += 1) {
-//            System.out.println((i + 1) + " : " + list.get(i));
-//        }
-//        System.out.println();
+    }while(input !=5);
 
     }
 
