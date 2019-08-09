@@ -11,6 +11,8 @@ import java.util.Arrays;
 import java.nio.file.Files;
 import java.util.ArrayList;
 //import java.util.
+import java.util.Collections;
+
 
 public class ContactsTest extends Contacts{
     public ContactsTest(String firstName, String lastName, String phoneNumber) throws IOException {
@@ -28,6 +30,7 @@ public class ContactsTest extends Contacts{
 
 //        PRINTS LIST
             List<String> list = Files.readAllLines(contactsPath);
+            Collections.sort(list);
             for (int i = 0; i < list.size(); i += 1) {
                 System.out.println((i + 1) + " : " + list.get(i));
             }
@@ -52,6 +55,7 @@ public class ContactsTest extends Contacts{
         switch (input) {
             case 1:
                 list = Files.readAllLines(contactsPath);
+                Collections.sort(list);
                 for (int i = 0; i < list.size(); i += 1) {
                     System.out.println((i + 1) + " : " + list.get(i));
                 }

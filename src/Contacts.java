@@ -40,8 +40,9 @@ public class Contacts {
         System.out.println("Phone number");
         String inputNum = scan.nextLine();
 
-        String concat=inputFirst+" | "+inputLast+" | "+inputNum;
-        Files.write(contactsPath, Arrays.asList(concat),
+        String contactInfo= inputFirst+" | "+inputLast+" | "+inputNum;
+
+        Files.write(contactsPath, Arrays.asList(contactInfo),
                 StandardOpenOption.APPEND
         );
     }
