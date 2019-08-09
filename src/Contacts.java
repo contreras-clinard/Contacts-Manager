@@ -54,8 +54,8 @@ public class Contacts {
         String input= scan.nextLine();
 //
         for (int i = 0; i <= list.size()-1 ; i++) {
-            if (list.get(i).toLowerCase().contains(input)) {
-                System.out.println("Contact info:/n"+list.get(i));
+            if (list.get(i).toLowerCase().contains(input.toLowerCase())) {
+                System.out.println("Contact info:\n"+list.get(i));
 //
             }
         }
@@ -67,7 +67,7 @@ public class Contacts {
         System.out.println("Which Contact would you like to Delete?");
             String input= scan.nextLine();
         for (int i = 0; i <= removeList.size()-1 ; i++) {
-            if (removeList.get(i).toLowerCase().contains(input)) {
+            if (removeList.get(i).toLowerCase().contains(input.toLowerCase())) {
                 String item=removeList.get(i);
 //                System.out.println("this is line 89:" + item);
                 removeList.remove(i);
