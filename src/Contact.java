@@ -37,7 +37,7 @@ public class Contact {
         String inputFirst = scan.nextLine();
         System.out.println("Last name:");
         String inputLast = scan.nextLine();
-        System.out.println("Phone number");
+        System.out.println("Phone number:");
         String inputNum = scan.nextLine();
 
         String contactInfo = String.format("%-15s %-15s | %15s", inputFirst, inputLast, inputNum);

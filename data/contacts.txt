@@ -1,1 +1,7 @@
 Daffy           Duck            |    345-432-5678
+Bugs            Bunny           | +1 111-111-1111
+Tweety          Bird            |    333-333-3333
+Tazmanian       Devil           |    888-888-8888
+YoSamity        Sam             |    000-000-0000
+Speedy          Gonzalez        | +15 555-555-5555
+Mickey           Mouse           |    453-234-9999

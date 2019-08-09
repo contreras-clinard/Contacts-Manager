@@ -31,10 +31,10 @@ public class ContactsTest extends Contact{
 //        PRINTS LIST
             List<String> list = Files.readAllLines(contactsPath);
             Collections.sort(list);
-            for (int i = 0; i < list.size(); i += 1) {
-                System.out.println((i + 1) + " : " + list.get(i));
-            }
-        System.out.println();
+//            for (int i = 0; i < list.size(); i += 1) {
+//                System.out.println((i + 1) + " : " + list.get(i));
+//            }
+//        System.out.println();
 
         //--FOR THE SWITCH CASE:
 //
@@ -42,9 +42,9 @@ public class ContactsTest extends Contact{
         menu +="\n1. View contacts.\n";
         menu+="2. Add a new contact.\n";
         menu+="3. Search a contact by name.\n";
-        menu+="4. Edit a contact.\n";
-        menu+="5. Delete an existing contact.\n";
-        menu+="6. Exit.\n" ;
+//        menu+="4. Edit a contact.\n";
+        menu+="4. Delete an existing contact.\n";
+        menu+="5. Exit.\n" ;
         menu+="Enter an option:\n";
 
     do {
